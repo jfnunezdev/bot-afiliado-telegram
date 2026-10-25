@@ -4,6 +4,7 @@ import html
 import random
 import asyncio
 import aiohttp
+import os
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
@@ -15,14 +16,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 # ======================== CONFIGURACIÓN ========================
-TOKEN = "8920122535:AAELJ-cvDDChqhLp-Boz7tGHt_Xdth9zwJc"
+TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CANAL_ID = "@achadinhos_pixencode"
 CODIGO_AFILIADO_SHOPEE = "18339800321"
 CODIGO_AFILIADO_MERCADOLIBRE = "j20251105190222"
 TIEMPO_ESPERA_PUBLICACION = 1800
 # ============================================================
-
 LISTA_INICIAL_REFERENCIA = [
     {"url": "https://shopee.com.br/m/ofertas-diarias", "plataforma": "shopee", "imagen": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800"},
     {"url": "https://shopee.com.br/search?keyword=celular", "plataforma": "shopee", "imagen": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"},
